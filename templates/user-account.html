@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}<title>Профиль | {{user.username}}</title>{% endblock %}
+{% block link %}<link type="text/css" rel="stylesheet" href="{% static 'login.css' %}">{% endblock %}
+{% block content %}
+    {% if user.is_authenticated %}
+            <div class="profile-width" style="margin-top: 5%">
+            {% if user_form.avatar %}
+                <img src="{{ user_form.avatar }}" style="width: 500px; height: 500px; border-radius: 500px">
+            {% else %}
+                <img src="{% static 'img/logo-profile.jpg' %}" style="width: 500px; height: 500px; border-radius: 500px">
+            {% endif %}
+
+                <p style="color: #4d4d4d; font-size: 12px; margin-top: 50px">Ваше имя</p>
+                <h2 style="color: #FFFFFF; font-size: 20px">{{ user.username }}</h2>
+                <p style="color: #4d4d4d; font-size: 12px; margin-top: 20px">Email</p>
+                <p style="color: #FFFFFF; font-size: 20px; margin-bottom: 20px">{{ user.email }}</p>
+                {% if user.is_superuser %}
+                    <p style="color: #ca2c2c; font-size: 15px; margin-top: 20px;margin-bottom: 20px">Вы админ</p>
+                {% endif %}
+                <a style="color: #FFFFFF; font-size: 10px;" href="{% url 'logout' %}">ВЫЙТИ</a><br><br>
+                <a style="color: #4FFFCA;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;" href="{% url 'home' %}">На главную</a>
+            </div>
+    {% endif %}
+{% endblock %}

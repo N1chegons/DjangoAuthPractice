@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block link %} <link rel="stylesheet" href="{% static 'login.css'%}"> {% endblock %}
+
+{% block title %}<title>Войти</title>{% endblock %}
+
+{% block content %}
+    <div class="form-login">
+        <h2 class="h2_ac">ВХОД</h2>
+
+        <form method="post">
+            {% csrf_token %}
+            {% if form.errors %}
+                <p>
+                    Your username and password didn't match.
+                    Please try again.
+                </p>
+            {% endif %}
+            {{ form.username }}
+            {{ form.password }}
+            {% for message in messages %}
+                <p class="errors"> {{ message }} </p>
+            {% endfor %}
+            <button class="btn-login" type="submit">ВОЙТИ</button>
+        </form>
+
+        <a href="{% url 'register' %}" class="register-log">РЕГИСТРАЦИЯ</a>
+    </div>
+{% endblock %}

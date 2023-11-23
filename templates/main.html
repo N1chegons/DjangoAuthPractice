@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    {% block link %}<link rel="stylesheet" href="{% static 'main.css' %}">{% endblock %}
+    {% block title %}<title>Главная</title>{% endblock %}
+</head>
+<body>
+    {% block content %}
+        <header>
+            <div class="header-top">
+                <img src="{% static 'img/Logo.png' %}" alt="logo">
+                <div class="href-group">
+                    {% if user.is_authenticated %}
+                        <a class="entrance" href="{% url 'account' %}">ПРОФИЛЬ</a> <p></p> <a href="{% url 'logout' %}" class="register">ВЫХОД</a>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="entrance">ВХОД</a> <p></p> <a href="{% url 'register' %}" class="register">РЕГИСТРАЦИЯ</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="header-bottom">
+                <img class="null-img" src="{% static 'img/Null.png' %}" alt="null">
+
+                <div class="bottom-group">
+                    <p class="symbol">%</p>'
+                    <div>
+                        <p class="desc-bottom">на ввод<br> средств </p>
+                        <a href="#" class="btn-bottom">НАЧАТЬ</a>
+                    </div>
+                </div>
+
+                <img class="rocket" src="{% static 'img/Rocket.png' %}" alt="rocket">
+            </div>
+        </header>
+    {% endblock %}
+</body>
+</html>

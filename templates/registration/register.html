@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}<title>Регистрация</title>{% endblock %}
+{% block link %} <link rel="stylesheet" href="{% static 'register.css '%}"> {% endblock %}
+
+{% block content %}
+    <div class="form-register">
+        <h2>РЕГИСТРАЦИЯ</h2>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ user_form.username }}
+            {{ user_form.email }}
+            {{ user_form.password }}
+            {{ user_form.password2 }}
+            {% for message in messages %}
+                <p> {{ message }} </p>
+            {% endfor %}
+            <button class="btn-login" type="submit">РЕГИСТРАЦИЯ</button>
+        </form>
+
+        <a href="{% url 'login' %}" class="log-register">ВХОД</a>
+        {% comment %} <a href="{% url 'reg_to_vk' %}" class="log-register">ВХОД VK</a> {% endcomment %}
+    </div>
+{% endblock %}

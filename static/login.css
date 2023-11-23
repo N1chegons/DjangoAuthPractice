@@ -1,0 +1,129 @@
+@import './reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    background-color: #0E1314;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+
+header {
+    background-color: #0E1314;
+    height: 964px;
+}
+
+.header-top {
+    display: flex;
+    width: 1142px;
+    padding: 44px 363px;
+    column-gap: 900px;
+}
+
+.href-group {
+    display: flex;
+}
+
+
+.entrance {
+    color: #FFF;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    padding-right: 10px;
+
+    transition: 0.5s ease-in;
+}
+
+.entrance:hover {
+    color: #4FFFCA;
+    transition: 0.5s ease-in;
+}
+
+.href-group p {
+    background-color: #B7B8B9;
+    width: 1px;
+    height: 24px;
+    margin-top: -3px;
+}
+
+.register {
+    color: #4FFFCA;
+    font-size: 14px;
+    font-weight: 400;
+    padding-left: 10px;
+
+    transition: 0.5s ease-in;
+}
+
+.register:hover {
+    color: #ffffff;
+    transition: 0.5s ease-in;
+}
+
+
+.h2_ac {
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 50px;
+    margin-left: -5px;
+}
+
+
+.form-login {
+    height: 500px;
+    width: 500px;
+    display: block;
+    margin-top: 10%;
+    padding-top: 5%;
+
+    border: 1px solid #ffff;
+    border-radius: 20px;
+}
+
+.user-input {
+    margin-top: 40px;
+    background-color: #FFFFFF;
+    padding: 10px 0 12px 10px;
+    border-radius: 5px;
+    width: 60%;
+}
+
+.password-input {
+    background-color: #FFFFFF;
+    padding: 10px 0 12px 10px;
+    border-radius:5px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 60%;
+}
+
+.btn-login {
+    color: #192227;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 10px;
+    background-color: #4FFFCA;
+    width: 60%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.error {
+    color: red;
+    font-size: 10px;
+    margin-bottom: 30px;
+}
+
+.register-log {
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 500;
+
+    transition: 0.5s ease-in;
+}
